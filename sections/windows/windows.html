@@ -26,7 +26,7 @@
           <p>在你的 APP 里可以使用<code>BrowserWindow</code> 模块新建一个窗口. 子窗口的主进程模块可以在父窗口的渲染进程中通过 <code>remote</code> 模块调用， 🌰  就是这么实现的</p>
 
           <p>创建新窗口的时候，可以配置许多选择项.   🌰  中涉及了一部分，更详细的请参考 <a href="http://electron.atom.io/docs/api/browser-window">官方文档<span class="u-visible-to-screen-reader">(将会在新页面打开)</span></a></p>
-          <h5>代码</h5>
+          <h5>渲染进程代码</h5>
           <pre><code data-path="renderer-process/windows/create-window.js"></pre></code>
 
           <div class="demo-protip">
@@ -55,7 +55,7 @@
           <p>这个 🌰 中演示了主进程监听窗口 <code>move</code> 和 <code>resize</code> 事件. 点开 🌰 试一试吧.</p>
 
           <p>用于控制窗口状态的方法特别多，例如，窗口的尺寸，位置，激活状态以及窗口变化。详情查看 <a href="http://electron.atom.io/docs/api/browser-window">官方文档<span class="u-visible-to-screen-reader">(将会在新页面打开)</span></a></p>
-          <h5>代码</h5>
+          <h5>渲染进程代码</h5>
           <pre><code data-path="renderer-process/windows/manage-window.js"></pre></code>
         </div>
       </div>
@@ -73,7 +73,7 @@
           <p>一个没有边的窗口实际上是没有<a href="https://developer.mozilla.org/en-US/docs/Glossary/Chrome">"chrome"</a>框架而已,例如工具条，窗口名，状态条，边框等等。（如果你想创建一个极简风格的 APP 这个就特别适合你。译者注）。实现起来也很简单，创建窗口的时候设置<code>frame</code> 为 <code>false</code>来实现 
           </p>
 
-          <h5>代码</h5>
+          <h5>渲染进程代码</h5>
           <pre><code data-path="renderer-process/windows/frameless-window.js"></pre></code>
 
           <p>窗口本身也可以有一个透明的背景（这里跟不显示也有区别，译者注）。创建时将 <code>transparent</code> 选项设置为 <code>true</code>来实现</p>

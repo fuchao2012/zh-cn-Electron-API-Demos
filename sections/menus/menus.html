@@ -4,37 +4,38 @@
       <div class="section-wrapper">
         <h1>
           <svg class="section-icon"><use xlink:href="assets/img/icons.svg#icon-menu"></use></svg>
-          Customize Menus
+          自定义菜单
         </h1>
-        <h3>The <code>Menu</code> and <code>MenuItem</code> modules can be used to create custom native menus.</h3>
+        <h3> Electron中使用 <code>Menu</code> 以及 <code>MenuItem</code>模块构建自定义菜单.</h3>
 
-        <p>There are two kinds of menus: the application (top) menu and context (right-click) menu.</p>
+        <p>常见有两种菜单，程序的主菜单，和上下文右键菜单</p>
 
-        <p>Open the <a href="http://electron.atom.io/docs/api/menu">full API documentation<span class="u-visible-to-screen-reader">(opens in new window)</span></a> in your browser.</p>
+        <p>详情查看 <a href="http://electron.atom.io/docs/api/menu">完整 API 文档<span class="u-visible-to-screen-reader">(在新窗口打开)</span></a> </p>
       </div>
     </header>
 
     <div class="demo">
       <div class="demo-wrapper">
-        <button id="application-menu-demo-toggle" class="js-container-target demo-toggle-button">Create an application menu
-          <div class="demo-meta u-avoid-clicks">Supports: Win, OS X, Linux <span class="demo-meta-divider">|</span> Process: Main</div>
+        <button id="application-menu-demo-toggle" class="js-container-target demo-toggle-button">创建主菜单
+          <div class="demo-meta u-avoid-clicks">支持系统: Win, OS X, Linux <span class="demo-meta-divider">|</span> 进程: Main</div>
         </button>
         <div class="demo-box">
-          <p>The <code>Menu</code> and <code>MenuItem</code> modules allow you to customize your application menu. If you don't set any menu, Electron will generate a minimal menu for your app by default.</p>
+          <p>Electron中使用 <code>Menu</code> 以及 <code>MenuItem</code>模块构建自定义主菜单. 如果没有设置菜案，Electron 会默认使用最小菜单</p>        
 
-          <p>This app uses the code below to set the application menu. If you click the 'View' option in the application menu and then the 'App Menu Demo', you'll see an information box displayed.</p>
-          <h5>Main Process</h5>
+          <p>APP中使用下边的代码来设置主菜单，你可以尝试点击 <code>视图</code>-><code>APP菜单 🌰 </code>，你可以看到一个弹窗</p>
+          <h5>主程序代码</h5>
           <pre><code data-path="main-process/menus/application-menu.js"></code></pre>
 
           <div class="demo-protip">
-            <h2>ProTip</h2>
-            <strong>Know operating system menu differences.</strong>
-            <p>When designing an app for multiple operating systems it's important to be mindful of the ways application menu conventions differ on each operating system.</p>
-            <p>For instance, on Windows, accelerators are set with an <code>&</code>. Naming conventions also vary, like between "Settings" or "Preferences". Below are resources for learning operating system specific standards.</p>
+            <h2>友情提示</h2>
+            <strong>了解不同系统菜单的差别</strong>
+            <p>设计 APP 之初了解这些区别还是很重要的。</p>
+
+            <p>例如，Windows 里面就用 <code>&</code>标识快捷键.命名方式上，设置和首选项就比较类似了。下边给出一些参考文献</p>
             <ul>
-              <li><a href="https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/MenuBarMenus.html#//apple_ref/doc/uid/20000957-CH29-SW1">OS X<span class="u-visible-to-screen-reader">(opens in new window)</span></a></li>
-              <li><a href="https://msdn.microsoft.com/en-us/library/windows/desktop/bb226797(v=vs.85).aspx">Windows<span class="u-visible-to-screen-reader">(opens in new window)</span></a></li>
-              <li><a href="https://developer.gnome.org/hig/stable/menu-bars.html.en">Linux<span class="u-visible-to-screen-reader">(opens in new window)</span></a></li>
+              <li><a href="https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/MenuBarMenus.html#//apple_ref/doc/uid/20000957-CH29-SW1">OS X<span class="u-visible-to-screen-reader">(在新窗口打开)</span></a></li>
+              <li><a href="https://msdn.microsoft.com/en-us/library/windows/desktop/bb226797(v=vs.85).aspx">Windows<span class="u-visible-to-screen-reader">(在新窗口打开)</span></a></li>
+              <li><a href="https://developer.gnome.org/hig/stable/menu-bars.html.en">Linux<span class="u-visible-to-screen-reader">(在新窗口打开)</span></a></li>
             </ul>
           </div>
         </div>
@@ -43,20 +44,20 @@
 
     <div class="demo">
       <div class="demo-wrapper">
-        <button id="context-menu-demo-toggle" class="js-container-target demo-toggle-button">Create a context menu
-          <div class="demo-meta u-avoid-clicks">Supports: Win, OS X, Linux <span class="demo-meta-divider">|</span> Process: Main</div>
+        <button id="context-menu-demo-toggle" class="js-container-target demo-toggle-button">创建一个上下文菜单
+          <div class="demo-meta u-avoid-clicks">支持系统: Win, OS X, Linux <span class="demo-meta-divider">|</span> 进程: Main</div>
         </button>
         <div class="demo-box">
           <div class="demo-controls">
-            <button class="demo-button" id="context-menu">View Demo</button>
+            <button class="demo-button" id="context-menu">点我看效果</button>
           </div>
-          <p>A context, or right-click, menu can be created with the <code>Menu</code> and <code>MenuItem</code> modules as well. You can right-click anywhere in this app or click the demo button to see an example context menu.</p>
+          <p>上下文菜单也是由 <code>Menu</code> 以及 <code>MenuItem</code> 模块构建的。你可以在这个 APP 的任何位置右击查看 🌰 </p>
 
-          <p>In this demo we use the <code>ipcRenderer</code> module to show the context menu when explicitly calling it from the renderer process.</p>
-          <p>See the full <a href="http://electron.atom.io/docs/api/web-contents/#event-context-menu">context-menu event documentation</a> for all the available properties.</p>
-          <h5>Main Process</h5>
+          <p>在这个 🌰 中，当渲染模块显式调用菜单构建命令时，系统调用 <code>ipcRenderer</code> 模块来显示上下文菜单</p>
+          <p>详情查看 <a href="http://electron.atom.io/docs/api/web-contents/#event-context-menu">上下文事件文档</a></p>
+          <h5>主程序代码</h5>
           <pre><code data-path="main-process/menus/context-menu.js"></pre></code>
-          <h5>Renderer Process</h5>
+          <h5>渲染程序代码</h5>
           <pre><code data-path="renderer-process/menus/context-menu.js"></pre></code>
         </div>
       </div>
