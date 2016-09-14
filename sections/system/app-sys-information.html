@@ -4,29 +4,29 @@
       <div class="section-wrapper">
         <h1>
           <svg class="section-icon"><use xlink:href="assets/img/icons.svg#icon-system"></use></svg>
-          Get app and system information
+          获取 APP 和系统信息
         </h1>
-        <h3>With a few Node.js and Electron modules you can gather information about the user's system, app or screen.</h3>
-        <p>Links to the relevant documentation are in the demos below.</p>
+        <h3>通过使用 Node.js 和 Electron 的部分模块，可以显示出用户系统信息，APP 信息以及窗口信息.</h3>
+        <p>下边 🌰 里给出了对应在线文档的地址</p>
       </div>
     </header>
 
     <div class="demo">
       <div class="demo-wrapper">
-        <button id="app-info-demo-toggle" class="js-container-target demo-toggle-button">Get app information
-          <div class="demo-meta u-avoid-clicks">Supports: Win, OS X, Linux <span class="demo-meta-divider">|</span> Process: Both</div>
+        <button id="app-info-demo-toggle" class="js-container-target demo-toggle-button">获取 APP 信息
+          <div class="demo-meta u-avoid-clicks">支持系统: Win, OS X, Linux <span class="demo-meta-divider">|</span> 进程: Both</div>
         </button>
         <div class="demo-box">
           <div class="demo-controls">
-            <button class="demo-button" id="app-info">View Demo</button>
+            <button class="demo-button" id="app-info">点我看效果</button>
             <span class="demo-response" id="got-app-info"></span>
           </div>
-          <p>The main process <code>app</code> module can be used to get the path at which your app is located on the user's computer.</p>
-          <p>In this example, to get that information from the renderer process, we use the <code>ipc</code> module to send a message to the main process requesting the app's path.</p>
-          <p>See the <a href="http://electron.atom.io/docs/api/app">app module documentation<span class="u-visible-to-screen-reader">(opens in new window)</span></a> for more.</p>
-          <h5>Renderer Process</h5>
+          <p>主进程的<code>app</code>模块可以查看 APP 的安装路径.</p>
+          <p>在 🌰 中，通过 <code>ipc</code>模块从渲染进程向主进程请求 APP 信息，这里是安装路径</p>
+          <p>详情查看 <a href="http://electron.atom.io/docs/api/app">APP 模块<span class="u-visible-to-screen-reader">(在线文档)</span></a></p>
+          <h5>渲染进程</h5>
           <pre><code data-path="renderer-process/system/app-information.js"></pre></code>
-          <h5>Main Process</h5>
+          <h5>主进程</h5>
           <pre><code data-path="main-process/system/app-information.js"></pre></code>
         </div>
       </div>
@@ -34,24 +34,24 @@
 
     <div class="demo">
       <div class="demo-wrapper">
-        <button id="app-info-demo-toggle" class="js-container-target demo-toggle-button">Get version information
-          <div class="demo-meta u-avoid-clicks">Supports: Win, OS X, Linux <span class="demo-meta-divider">|</span> Process: Both</div>
+        <button id="app-info-demo-toggle" class="js-container-target demo-toggle-button">获取 APP 版本信息
+          <div class="demo-meta u-avoid-clicks">支持: Win, OS X, Linux <span class="demo-meta-divider">|</span> 进程: Both</div>
         </button>
         <div class="demo-box">
           <div class="demo-controls">
-            <button class="demo-button" id="version-info">View Demo</button>
+            <button class="demo-button" id="version-info">点我看效果</button>
             <span class="demo-response" id="got-version-info"></span>
           </div>
-          <p>The <code>process</code> module is built into Node.js (therefore you can use this in both the main and renderer processes) and in Electron apps this object has a few more useful properties on it.</p>
-          <p>The example below gets the version of Electron in use by the app.</p>
-          <p>See the <a href="http://electron.atom.io/docs/api/process">process documentation<span class="u-visible-to-screen-reader">(opens in new window)</span></a> for more.</p>
-          <h5>Renderer Process</h5>
+          <p> <code>process</code> 模块是Node.js内置模块(因此你可以在两个进程中都可以调起这个模块)， Electron 中对这个模块进行了拓展，增加了一些其他的特性</p>
+          <p>🌰 中展示了 APP 所使用的 Electron 的版本</p>
+          <p>详情查看 <a href="http://electron.atom.io/docs/api/process">process模块<span class="u-visible-to-screen-reader">(在线文档)</span></a></p>
+          <h5>渲染进程</h5>
           <pre><code data-path="renderer-process/system/version-information.js"></pre></code>
 
           <div class="demo-protip">
-            <h2>ProTip</h2>
-            <strong>Find versions of Chromium, Node.js and V8.</strong>
-            <p>Electron also includes verions of Chromium, Node.js and V8 within the <code>process.versions</code> object. You can get there quickly by opening up developer tools in an Electron app and typing <code>process.versions</code>.</p>
+            <h2>友情提示</h2>
+            <strong>查看 Chromium, Node.js 以及 V8的版本.</strong>
+            <p>Electron 也提供了 Chromium, Node.js 以及 V8 的版本信息(<code>process.versions</code> ). 最快的查看方式还是在 Dev-tools里输入<code>process.versions</code>进行查看</p>
             <pre><code class="language-js">// Returns version of Chromium in use
 process.versions.chrome
 // Returns version of V8 in use
@@ -65,19 +65,19 @@ process.versions.node</code></pre>
 
     <div class="demo">
       <div class="demo-wrapper">
-        <button id="sys-info-demo-toggle" class="js-container-target demo-toggle-button">Get system information
-          <div class="demo-meta u-avoid-clicks">Supports: Win, OS X, Linux <span class="demo-meta-divider">|</span> Process: Both</div>
+        <button id="sys-info-demo-toggle" class="js-container-target demo-toggle-button">获取系统信息
+          <div class="demo-meta u-avoid-clicks">支持: Win, OS X, Linux <span class="demo-meta-divider">|</span> 进程: Both</div>
         </button>
         <div class="demo-box">
           <div class="demo-controls">
-            <button class="demo-button" id="sys-info">View Demo</button>
+            <button class="demo-button" id="sys-info">点我看效果</button>
             <span class="demo-response" id="got-sys-info"></span>
           </div>
-          <p>The Node.js <code>os</code> module provides useful information about the user's operating system. It's built into Node.js and can be used in both the main and renderer proesses.</p>
-          <p>In the example below we require the module and then return the location of the home directory.</p>
+          <p> Node.js 提供的<code>os</code> 模块提供了用户操作系统的信息，由于是 Node.js 内置，所以两个进程都能使用</p>
+          <p> 🌰 中调用这个模块并返回了用户主目录地址</p>
 
-          <p>See the full <a href="https://nodejs.org/api/os.html"> os documentation<span class="u-visible-to-screen-reader">(opens in new window)</span></a> for more.</p>
-          <h5>Renderer Process</h5>
+          <p>详情查看<a href="https://nodejs.org/api/os.html"> os 模块<span class="u-visible-to-screen-reader">(在线文档)</span></a> </p>
+          <h5>渲染进程</h5>
           <pre><code data-path="renderer-process/system/sys-information.js"></pre></code>
         </div>
       </div>
@@ -85,26 +85,26 @@ process.versions.node</code></pre>
 
     <div class="demo">
       <div class="demo-wrapper">
-        <button id="screen-info-demo-toggle" class="js-container-target demo-toggle-button">Get screen information
-          <div class="demo-meta u-avoid-clicks">Supports: Win, OS X, Linux <span class="demo-meta-divider">|</span> Process: Both</div>
+        <button id="screen-info-demo-toggle" class="js-container-target demo-toggle-button">获取窗口信息
+          <div class="demo-meta u-avoid-clicks">支持系统: Win, OS X, Linux <span class="demo-meta-divider">|</span> 进程: Both</div>
         </button>
         <div class="demo-box">
           <div class="demo-controls">
-            <button class="demo-button" id="screen-info">View Demo</button>
+            <button class="demo-button" id="screen-info">点我看效果</button>
             <span class="demo-response" id="got-screen-info"></span>
           </div>
-          <p>The Electron <code>screen</code> module retrieves information about screen size, displays, cursor position, etc. In the example below we retrieve the dimensions of the monitor in use.</p>
+          <p>Electron <code>screen</code> 模块包含了窗口尺寸，显示方式，位置等信息，🌰 中获取了窗口的朝向</p>
 
-          <p>See the full <a href="http://electron.atom.io/docs/api/screen">screen documentation<span class="u-visible-to-screen-reader">(opens in new window)</span></a> for more.</p>
-          <h5>Renderer Process</h5>
+          <p>详情查看<a href="http://electron.atom.io/docs/api/screen">screen 模块<span class="u-visible-to-screen-reader">(在线文档)</span></a> </p>
+          <h5>渲染进程</h5>
           <pre><code data-path="renderer-process/system/screen-information.js"></pre></code>
 
           <div class="demo-protip">
-            <h2>ProTip</h2>
-            <strong>Differences in dimensions.</strong>
-            <p>The <code>.size</code> method in the example returns the raw dimensions of the screen but because of system menu bars this may not be the actual space available for your app.</p>
+            <h2>友情提示</h2>
+            <strong>不同朝向的区别.</strong>
+            <p>screen 的<code>.size</code> 方法实现的翻转会由于你的屏幕问题无法看到翻转效果</p>
 
-            <p>To get the dimensions of the available screen space use the <code>.workAreaSize</code> method. Using <code>.workArea</code> will return the coordinates as well as the dimensions of the available screen space.</p>
+            <p>如果生产环境中有这个需求，需要首先监测 <code>.workAreaSize</code> 方法. 这个方法会返回能够翻转的屏幕尺寸</p>
           </div>
         </div>
       </div>
