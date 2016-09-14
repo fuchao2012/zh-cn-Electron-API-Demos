@@ -4,30 +4,31 @@
       <div class="section-wrapper">
         <h1>
           <svg class="section-icon"><use xlink:href="assets/img/icons.svg#icon-system"></use></svg>
-          Protocol Handler
+          协议启动
         </h1>
-        <h3>The <code>app</code> module provides methods for handling protocols.</h3>
-        <p>These methods allow you to set and unset the protocols your app should be the default app for. Similar to when a browser asks to be your default for viewing web pages.</p>
+        <h3> Electron 的 <code>app</code> 模块提供了方法用于处理各种协议</h3>
+        <p>这些方法包含了，是否将本 APP 设置为默认应用，类似于设置默认浏览器</p>
 
-        <p>Open the <a href="http://electron.atom.io/docs/api/app">full app API documentation<span class="u-visible-to-screen-reader">(opens in new window)</span></a> in your browser.</p>
+        <p>详情查看 <a href="http://electron.atom.io/docs/api/app">APP 模块<span class="u-visible-to-screen-reader">(在线文档)</span></a> </p>
       </div>
     </header>
 
     <div class="demo">
       <div class="demo-wrapper">
-        <button id="copy-to-demo-toggle" class="js-container-target demo-toggle-button">Launch app from URL in another app
-          <div class="demo-meta u-avoid-clicks">Supports: Win, OS X <span class="demo-meta-divider">|</span> Process: Main</div>
+        <button id="copy-to-demo-toggle" class="js-container-target demo-toggle-button">在其他应用中以 URL 形式启动本APP
+          <div class="demo-meta u-avoid-clicks">支持: Win, OS X <span class="demo-meta-divider">|</span> 进程: Main</div>
         </button>
         <div class="demo-box">
           <div class="demo-controls">
-            <button class="demo-button" id="protocol-handler">View Demo</button>
+            <button class="demo-button" id="protocol-handler">点我看效果</button>
           </div>
-          <p>You can set your app as the default app to open for a specific protocol. For instance, in this demo we set this app as the default for <code>electron-api-demos://</code>. The demo button above will launch a page in your default browser with a link. Click that link and it will re-launch this app.</p>
-          <h5>Packaging</h5>
-          <p>This feature will only work on OS X when your app is packaged. It will not work when you're launching it in development from the command-line. When you package your app you'll need to make sure the OS X <code>plist</code> for the app is updated to include the new protocol handler. If you're using <code>electron-packager</code> then you can add the flag <code>--extend-info</code> with a path to the <code>plist</code> you've created. The one for this app is below.</p>
-          <h5>Renderer Process</h5>
+          <p> 你可以将你的 APP设置为打开某个协议的默认应用，例如，🌰 里设置本 APP 为打开<code>electron-api-demos://</code> 协议开头的链接的默认应用。🌰 中会打开一个含协议链接的网页，点击这个链接会重新启动（返回） APP</p>
+          <h5>带参数打包</h5>
+          <p>这个特性仅在 OSX 环境下生效，而且 APP 必须是打包安装，测试环境运行不生效。当 APP 安装以后，需要找到 OS X 中对于本 APP 的. <code>plist</code>已经升级，并包含了协议处理句柄。如果你使用<code>electron-packager</code>打的包，你可以在打包的时候添加<code>--extend-info</code>参数，携带<code>plist</code>的值，具体实现过程可以参考 🌰 所示</p>
+
+          <h5>渲染进程</h5>
           <pre><code data-path="renderer-process/system/protocol-handler.js"></pre></code>
-          <h5>Main Process</h5>
+          <h5>进程</h5>
           <pre><code data-path="main-process/system/protocol-handler.js"></pre></code>
           <h5>OS X plist</h5>
           <pre><code class="language-xml" data-path="assets/mac/info.plist"></pre></code>
