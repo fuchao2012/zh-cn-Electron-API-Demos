@@ -4,27 +4,27 @@
       <div class="section-wrapper">
         <h1>
           <svg class="section-icon"><use xlink:href="assets/img/icons.svg#icon-media"></use></svg>
-          Take a screenshot
+          屏幕截图
         </h1>
-        <h3>The <code>desktopCapturer</code> module in Electron can be used to access any media, such as audio, video, screen and window, that is available through the <code>getUserMedia</code> web API in Chromium.</h3>
+        <h3> Electron 提供的 <code>desktopCapturer</code> 模块（理论上）可以访问任何媒体文件，比如音频，视频以及其他窗口，这些都要感谢Chromium提供的 web API <code>getUserMedia</code></h3>
 
-        <p>Open the <a href="http://electron.atom.io/docs/api/desktop-capturer">full API documentation<span class="u-visible-to-screen-reader">(opens in new window)</span></a> in your browser.</p>
+        <p>详情查看 <a href="http://electron.atom.io/docs/api/desktop-capturer"> desktop-capturer模块<span class="u-visible-to-screen-reader">(在线文档)</span></a></p>
       </div>
     </header>
 
     <div class="demo">
       <div class="demo-wrapper">
-        <button id="print-pdf-demo-toggle" class="js-container-target demo-toggle-button">Take a Screenshot
-          <div class="demo-meta u-avoid-clicks">Supports: Win, OS X, Linux | Process: Renderer</div>
+        <button id="print-pdf-demo-toggle" class="js-container-target demo-toggle-button">截图
+          <div class="demo-meta u-avoid-clicks">支持: Win, OS X, Linux | 进程: Renderer</div>
         </button>
         <div class="demo-box">
           <div class="demo-controls">
-            <button class="demo-button" id="screen-shot">View Demo</button>
+            <button class="demo-button" id="screen-shot">点我截图</button>
             <span class="demo-response is-selectable" id="screenshot-path"></span>
           </div>
-          <p>This demo uses the <code>desktopCapturer</code> module to gather screens in use and select the entire screen and take a snapshot of what is visible.</p>
-          <p>Clicking the demo button will take a screenshot of your current screen and open it in your default viewer.</p>
-          <h5>Renderer Process</h5>
+          <p>🌰 中调用<code>desktopCapturer</code> 模块对全屏做了个截图</p>
+          <p>点击截图可以截图，同时会用系统默认应用打开这个截图</p>
+          <h5>渲染进程</h5>
           <pre><code data-path="renderer-process/media/desktop-capturer.js"></pre></code>
         </div>
       </div>
