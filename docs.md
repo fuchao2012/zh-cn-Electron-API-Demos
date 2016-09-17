@@ -18,30 +18,23 @@
 这个文件夹包含了 APP 所用到的静态资源：CSS，Fonts, Images，以及公共库和帮助函数。
 
 #### `main-process`
-This directory contains sub folders for each demo section that requires JavaScript in the main process. This structure is mirrored in the `renderer-process` directory.
-这个文件夹包含了
-The `main.js` file, located in the root, takes each `.js` file in these directories and executes them.
+这个文件夹包含了主进程可以调起的模块所在子文件夹模块。这个结构映射在 `renderer-process` 目录中。根目录中的 `main.js` 引用了这个文件夹中的JS 代码并执行。
 
 #### `renderer-process`
-This directory contains sub folders for each demo section that requires JavaScript in the renderer process. This structure is mirrored in the `main-process` directory.
-这个文件夹包含了
-Each of the HTML page views requires the corresponding renderer-process `.js` files that it needs for its demo.
-
-Each page view reads the content of its relevant main and renderer process files and adds them to the page for the snippets.
+这个文件夹包含了这个文件夹包含了主进程可以调起的模块所在子文件夹模块。这个结构映射在 `renderer-process` 目录中。根目录中的 `main.js` 引用了这个文件夹中的HTML 模板 代码并执行。
+每一个视图文件会自动读取主进程和渲染进程的文件，并将这些源码添加到文档中。
 
 #### `sections`
-This directory contains sub folders for each demo section. These subfolders contain the HTML files for each of the demo pages. Each of these files is appended to `index.html`, located at the root.
-这个文件夹包含了
+这个文件夹包含了案例模块的每个子文件夹，这些文件夹会引入到根目录的 `index.html` 文件中。
+
 #### `index.html`
 这是 APP 的主视图。主要包含带导航的边栏，另外使用了[HTML imports](http://www.html5rocks.com/en/tutorials/webcomponents/imports/) 来引入不同模块的实现主体。
 
 #### `main.js`
-This file contains the lifecycle instructions for the app like how to start and quit, it is the app's main process. It grabs every `.js` file in the `main-process` directory and executes.
-
-The `package.json` sets this file as the `main` file.
+主文件中配置了 APP 的生命周期标识，例如开始执行和结束执行的操作，这是 APP 的主入口，也是 APP 中所有文件的执行容器。`package.json`中配置了这个入口。
 
 #### `package.json`
-This file is required when using `npm` and Electron.js. It contains details on the app: the author, dependencies, repository and points to `main.js` as the application's main process file.
+使用 npm 的时候，你需要有这么一个配置文件，（这么说，package.json是未来 web 的发源地，译者注）文件中包含了项目描述，作者，项目依赖，以及项目的入口文件。
 
 #### 文档
  `CODE_OF_CONDUCT`, `README`, `docs` 以及 `CONTRIBUTING` 是这个工程的说明文件 
@@ -54,12 +47,12 @@ This file is required when using `npm` and Electron.js. It contains details on t
 
 没啥特殊的要求，统一就好:
 
-- Styling elements directly should be avoided, but ok in some cases. Like `<p>` or `<code>`.
-- Elements that belong together are prefixed with their parent class. `.section`, `.section-header`, `.section-icon`.
-- States use `is-` prefix
-- Utilities use `u-` prefix
+- 尽量不要直接配置 HTML 标签元素的样式，部分基本样式还可以。 `<p>` 或者 `<code>`
+- 可以组件化的元素之间，采用父子横线命名法，以父元素为基准进行命名。
+- 状态类型采用 `is-` 前缀
+- 工具类型采用 `u-` 前缀
 
-## Add a Section or Demo
+## 添加一个新 🌰 
 
 Here are tips for covering the bases when adding a new section or demo. General tip—for some of these just copy the line or file of a similar existing item to get started!
 
@@ -91,6 +84,7 @@ This template is added to the `index.html` in the app.
 
 Any code that you create for your demo should be added to the 'main-process' or 'renderer-process' directories depending on where it runs.
 
+
 All JavaScript files within the 'main-process' directory are run when the app starts but you'll link to the file so that it is displayed within your demo (see below).
 
 The renderer process code you add will be read and displayed within the demo and then required on the template page so that it runs in that process (see below).
@@ -110,3 +104,4 @@ The renderer process code you add will be read and displayed within the demo and
 #### Try it out
 
 At this point you should be able to run the app, `npm start`, and see you section and/or demo. :tada:
+
