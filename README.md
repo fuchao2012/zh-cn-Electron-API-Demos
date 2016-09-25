@@ -26,8 +26,8 @@
 你需要安装 [Node.js](https://nodejs.org)来构建本 APP 
 
 ```bash
-$ git clone https://github.com/electron/electron-api-demos
-$ cd electron-api-demos
+$ git clone https://github.com/fuchao2012/zh-cn-Electron-API-Demos
+$ cd zh-cn-Electron-API-Demos
 $ npm install
 $ npm start
 ```
